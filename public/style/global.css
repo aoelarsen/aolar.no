@@ -1,3 +1,12 @@
+:root {
+  --white: #F9F7F5;
+  --greentint: #c4f8de;
+  --purpletint: #dec4f8;
+  --gunmetal: #1D212E;
+  --greendark: #212E1D;
+  --reddark: #2E1D21;
+}
+
 *, *::before, *::after {
   box-sizing: border-box;
   margin: 0;
