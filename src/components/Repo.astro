@@ -1,0 +1,59 @@
+---
+  const { repoName, latestUpdate, description, language, githubLink } = Astro.props
+
+  export interface Props {
+    repoName: string;
+    latestUpdate?: string;
+    description: string;
+    language: string;
+    githubLink?: string;
+  }
+---
+
+<style lang="scss">
+  .card-wrap {
+    padding: 1rem;
+    border-radius: .3rem;
+    background-color: var(--gunmetal);
+    color: var(--white);
+
+    h4 {
+      text-align: center;
+      border-bottom: 1px solid var(--lightgray);
+    }
+
+    a {
+      color: var(--greentint);
+    } 
+  }
+
+  @media (prefers-color-scheme: dark) {
+    .card-wrap {
+      background-color: var(--white);
+      color: var(--gunmetal);
+
+      a {
+      color: var(--reddark);
+    }
+    }
+  }
+
+</style>
+
+<div class="card-wrap">
+  <h4>{repoName}</h4>
+  <ul>
+    {githubLink ? <li>
+      Github:<br /><a href={githubLink}>{repoName}</a>
+    </li> : null}
+    <li>
+      Description:<br />{description}
+    </li>
+    <li>
+      Language:<br />{language}
+    </li>
+    {latestUpdate ? <li>
+      Last update:<br />{latestUpdate}
+    </li> : null}
+  </ul>
+</div>

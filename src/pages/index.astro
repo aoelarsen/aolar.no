@@ -1,10 +1,9 @@
 ---
-// Component Imports
-import Tour from '../components/Tour.astro';
 import Header from '../components/Header.astro'
 import Footer from '../components/Footer.astro'
+import Repo from '../components/Repo.astro'
 // You can import components from any supported Framework here!
-import ReactCounter from '../components/ReactCounter.jsx';
+// import ReactCounter from '../components/ReactCounter.jsx';
 
 // Component Script:
 // You can write any JavaScript/TypeScript that you'd like here.
@@ -12,8 +11,9 @@ import ReactCounter from '../components/ReactCounter.jsx';
 // All variables are available to use in the HTML template below.
 let title = 'AOLar.no - Frontend developer and bicycle mechanic';
 
-// Full Astro Component Syntax:
-// https://docs.astro.build/core-concepts/astro-components/
+const aolarnoRepo = await fetch('https://api.github.com/repos/aoelarsen/aolar.no').then(res => res.json().catch(err => console.log(err)))
+const latestUpdate = new Date(aolarnoRepo.updated_at).toLocaleString()
+
 ---
 <html lang="en">
 <head>
@@ -38,8 +38,16 @@ let title = 'AOLar.no - Frontend developer and bicycle mechanic';
                 <h2 class="description__heading">Frontend developer</h2>
                 <p class="description__text"> &hellip; working as a bicycle&nbsp;mechanic</p>
             </section>
-            <!-- <section class="placeholder big-component">
-            </section> -->
+            <h3 class="big-component">The latest repositories I've been working on</h3>
+            <section class="small-component">
+                <Repo 
+                    repoName={aolarnoRepo.name}
+                    latestUpdate={latestUpdate}
+                    description={aolarnoRepo.description}
+                    language={aolarnoRepo.language}
+                    githubLink={aolarnoRepo.html_url}
+                />
+            </section>
             <!--
             - You can also use imported framework components directly in your markup!
             -
