@@ -29,10 +29,12 @@ main {
 
 .description__heading {
   font-size: clamp(2.5rem, calc(3rem + 1.5vw), 6rem);
+  transition: all 1s ease-in-out;
 }
 
 .description__text {
   font-size: 1.5rem;
+  transition: all 1s ease-in-out;
 }
 
 .front-grid {

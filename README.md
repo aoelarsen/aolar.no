@@ -1,4 +1,5 @@
 # Welcome to [AOLar.no](https://aolar.no)
+[![Netlify Status](https://api.netlify.com/api/v1/badges/4ce45616-d7c6-4d16-bd5c-2eb5c9a5f300/deploy-status)](https://app.netlify.com/sites/aolar/deploys)
 
 I'm a frontend mechanic :computer:...  or bicycle developer :mountain_bicyclist:... or something along those lines. 
 
