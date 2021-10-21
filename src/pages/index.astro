@@ -1,12 +1,9 @@
 ---
+
 import Header from '../components/Header.astro'
 import Footer from '../components/Footer.astro'
-import Repo from '../components/Repo.astro'
 
 let title = 'AOLar.no - Frontend developer and bicycle mechanic';
-
-const aolarnoRepo = await fetch('https://api.github.com/repos/aoelarsen/aolar.no').then(res => res.json().catch(err => console.log(err)))
-const latestUpdate = new Date(aolarnoRepo.updated_at).toLocaleString()
 
 ---
 <html lang="en">
@@ -20,7 +17,6 @@ const latestUpdate = new Date(aolarnoRepo.updated_at).toLocaleString()
     <link rel="stylesheet" href="/style/global.css">
     <link rel="stylesheet" href="/style/home.css">
 
-    <!-- <script src="../components/headerSwitch.js"></script> -->
 </head>
 <body>
     <div class="page-wrap">
@@ -33,8 +29,8 @@ const latestUpdate = new Date(aolarnoRepo.updated_at).toLocaleString()
                 <h2 class="description__heading">Frontend <span id="dev-to-mech">developer</span></h2>
                 <p class="description__text"> &hellip; working as a bicycle&nbsp;<span id="mech-to-dev">mechanic</span></p>
             </section>
-            <h3 class="big-component">The latest repositories I've been working on</h3>
-            <section class="small-component">
+            <!-- <h3 class="big-component">The latest repositories I've been working on</h3> -->
+            <!-- <section class="small-component">
                 <Repo 
                     repoName={aolarnoRepo.name}
                     latestUpdate={latestUpdate}
@@ -42,7 +38,7 @@ const latestUpdate = new Date(aolarnoRepo.updated_at).toLocaleString()
                     language={aolarnoRepo.language}
                     githubLink={aolarnoRepo.html_url}
                 />
-            </section>
+            </section> -->
             <!--
             - You can also use imported framework components directly in your markup!
             -
@@ -54,25 +50,6 @@ const latestUpdate = new Date(aolarnoRepo.updated_at).toLocaleString()
             <!-- <ReactCounter client:visible /> -->
         </main>
         <Footer />
-    </div> <!-- .page-wrap end -->
-
-    <script>
-    
-        const devToMech = document.getElementById('dev-to-mech');
-        const mechToDev = document.getElementById('mech-to-dev');
-
-        const switchWords = () => {
-            devToMech.innerHTML = 'mechanic';
-            mechToDev.innerHTML = 'developer';
-
-            setTimeout(function () {
-                devToMech.innerHTML = 'developer';
-                mechToDev.innerHTML = 'mechanic';
-            }, 3000);
-        };
-
-        setInterval(switchWords, 6000);
-    </script>
-    
+    </div> <!-- .page-wrap end -->    
 </body>
 </html>
