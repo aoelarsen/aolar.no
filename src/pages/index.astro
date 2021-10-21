@@ -1,19 +1,10 @@
 ---
-// Component Imports
-import Tour from '../components/Tour.astro';
+
 import Header from '../components/Header.astro'
 import Footer from '../components/Footer.astro'
-// You can import components from any supported Framework here!
-import ReactCounter from '../components/ReactCounter.jsx';
 
-// Component Script:
-// You can write any JavaScript/TypeScript that you'd like here.
-// It will run during the build, but never in the browser.
-// All variables are available to use in the HTML template below.
 let title = 'AOLar.no - Frontend developer and bicycle mechanic';
 
-// Full Astro Component Syntax:
-// https://docs.astro.build/core-concepts/astro-components/
 ---
 <html lang="en">
 <head>
@@ -26,19 +17,27 @@ let title = 'AOLar.no - Frontend developer and bicycle mechanic';
     <link rel="stylesheet" href="/style/global.css">
     <link rel="stylesheet" href="/style/home.css">
 
-    <style>
-
-    </style>
 </head>
 <body>
     <div class="page-wrap">
-        <Header />
+        <Header id="header">
+            <h1 class="header__title">AOLar.no</h1>
+            <p class="header__text">Anders Øksendal Larsen</p>
+        </Header>
         <main>
             <section class="description__container big-component">
-                <h2 class="description__heading">Frontend developer</h2>
-                <p class="description__text"> &hellip; working as a bicycle&nbsp;mechanic</p>
+                <h2 class="description__heading">Frontend <span id="dev-to-mech">developer</span></h2>
+                <p class="description__text"> &hellip; working as a bicycle&nbsp;<span id="mech-to-dev">mechanic</span></p>
             </section>
-            <!-- <section class="placeholder big-component">
+            <!-- <h3 class="big-component">The latest repositories I've been working on</h3> -->
+            <!-- <section class="small-component">
+                <Repo 
+                    repoName={aolarnoRepo.name}
+                    latestUpdate={latestUpdate}
+                    description={aolarnoRepo.description}
+                    language={aolarnoRepo.language}
+                    githubLink={aolarnoRepo.html_url}
+                />
             </section> -->
             <!--
             - You can also use imported framework components directly in your markup!
@@ -51,7 +50,6 @@ let title = 'AOLar.no - Frontend developer and bicycle mechanic';
             <!-- <ReactCounter client:visible /> -->
         </main>
         <Footer />
-    </div> <!-- .page-wrap end -->
-
+    </div> <!-- .page-wrap end -->    
 </body>
 </html>

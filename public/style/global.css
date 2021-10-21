@@ -1,3 +1,13 @@
+:root {
+  --white: #F9F7F5;
+  --greentint: #c4f8de;
+  --purpletint: #dec4f8;
+  --gunmetal: #1D212E;
+  --greendark: #212E1D;
+  --reddark: #2E1D21;
+  --lightgray: #c0c0c0;
+}
+
 *, *::before, *::after {
   box-sizing: border-box;
   margin: 0;
@@ -14,8 +24,8 @@
 body {
   width: 100%;
   min-height: 100vh;
-  background: #F9F7F5;
-  color: #1D212E;
+  background: var(--white);
+  color: var(--gunmetal);
 }
 
 .page-wrap {
@@ -31,9 +41,32 @@ h1, h2, h3, h4, h5, h6 {
   font-weight: 500;
 }
 
+a {
+  color: var(--reddark);
+  text-decoration: underline;
+}
+
+a:hover {
+  font-weight: bold;
+  text-decoration: none;
+}
+
+ul {
+  list-style-type: none;
+}
+
+li {
+  padding: 0.5rem;
+}
+
 @media (prefers-color-scheme: dark) {
   body {
-    background: #1D212E;
-    color: #F9F7F5;
+    background: var(--gunmetal);
+    color: var(--white);
   }
+
+  a {
+    color: var(--greentint)
+  }
+
 }
