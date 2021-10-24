@@ -12,7 +12,6 @@
  
 @layer components {
   .front-wrap {
-    margin: 0 auto;
     grid-template-rows: auto 1fr auto;
   }
 }

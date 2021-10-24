@@ -1,9 +1,8 @@
 ---
-
-// import Header from '../components/Header.astro'
-// import Footer from '../components/Footer.astro'
+import Header from '../components/Header.tsx'
+import Footer from '../components/Footer.tsx'
 import  metadata from '../components/Metadata.js'
-// let title = 'AOLar.no - Frontend developer and bicycle mechanic';
+
 const thisYear = new Date().getFullYear()
 ---
 <html lang="en">
@@ -13,7 +12,7 @@ const thisYear = new Date().getFullYear()
     <title>{metadata.title}</title>
     <meta name="description" content={metadata.description}>
 
-    <link rel="icon" type="image/x-icon" href="/favicon.ico" />
+    <link rel="icon" type="image/x-icon" href="./favicon.ico" />
     
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -23,42 +22,19 @@ const thisYear = new Date().getFullYear()
 
 </head>
 <body class="min-h-screen bg-secondary text-primary dark:bg-primary dark:text-secondary">
-    <div class="min-h-screen grid front-wrap max-w-screen-xl">
-        
-        <header class="p-5 md:p-7 lg:p-10">
-            <h1 class="font-sans font-bold text-3xl">AOLar.no</h1>
-            <p class="font-serif">Anders Øksendal Larsen</p>
-        </header>
+    <div class="min-h-screen grid front-wrap max-w-screen-xl mx-auto">
+        <Header title='AOLar.no' subTitle='Anders Øksendal Larsen'/>
 
         <main class="grid">
             <section class="text-right p-4 h-2/4 self-center grid content-center w-11/12">
-                <h2 class="font-sans text-bold text-4xl md:text-7xl">Frontend developer</h2>
+                <h2 class="font-sans text-bold text-5xl md:text-7xl">Frontend developer</h2>
                 <p class="font-serif text-1xl md:text-2xl"> &hellip; working as a bicycle&nbsp;mechanic</p>
             </section>
-            <!-- <h3 class="big-component">The latest repositories I've been working on</h3> -->
-            <!-- <section class="small-component">
-                <Repo 
-                    repoName={aolarnoRepo.name}
-                    latestUpdate={latestUpdate}
-                    description={aolarnoRepo.description}
-                    language={aolarnoRepo.language}
-                    githubLink={aolarnoRepo.html_url}
-                />
-            </section> -->
-            <!--
-            - You can also use imported framework components directly in your markup!
-            -
-            - Note: by default, these components are NOT interactive on the client.
-            - The `:visible` directive tells Astro to make it interactive.
-            -
-            - See https://docs.astro.build/core-concepts/component-hydration/ 
-            -->
-            <!-- <ReactCounter client:visible /> -->
+           
         </main>
 
-        <footer class="text-center font-sans">
-            <p>&copy; {thisYear} AOLar.no</p>
-        </footer>
-    </div>    
+        <Footer thisYear={thisYear} />
+
+    </div> <!-- Layout wrap -->    
 </body>
 </html>
