@@ -1,33 +1,39 @@
 ---
 
-import Header from '../components/Header.astro'
-import Footer from '../components/Footer.astro'
-
-let title = 'AOLar.no - Frontend developer and bicycle mechanic';
-
+// import Header from '../components/Header.astro'
+// import Footer from '../components/Footer.astro'
+import  metadata from '../components/Metadata.js'
+// let title = 'AOLar.no - Frontend developer and bicycle mechanic';
+const thisYear = new Date().getFullYear()
 ---
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width">
-    <title>{title}</title>
+    <title>{metadata.title}</title>
+    <meta name="description" content={metadata.description}>
 
     <link rel="icon" type="image/x-icon" href="/favicon.ico" />
     
-    <link rel="stylesheet" href="/style/global.css">
-    <link rel="stylesheet" href="/style/home.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lora:ital@0;1&family=Rubik:wght@300;400;600&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href={Astro.resolve("../styles/global.css")}>
 
 </head>
-<body>
-    <div class="page-wrap">
-        <Header id="header">
-            <h1 class="header__title">AOLar.no</h1>
-            <p class="header__text">Anders Øksendal Larsen</p>
-        </Header>
-        <main>
-            <section class="description__container big-component">
-                <h2 class="description__heading">Frontend <span id="dev-to-mech">developer</span></h2>
-                <p class="description__text"> &hellip; working as a bicycle&nbsp;<span id="mech-to-dev">mechanic</span></p>
+<body class="min-h-screen bg-secondary text-primary dark:bg-primary dark:text-secondary">
+    <div class="min-h-screen grid front-wrap max-w-screen-xl">
+        
+        <header class="p-5 md:p-7 lg:p-10">
+            <h1 class="font-sans font-bold text-3xl">AOLar.no</h1>
+            <p class="font-serif">Anders Øksendal Larsen</p>
+        </header>
+
+        <main class="grid">
+            <section class="text-right p-4 h-2/4 self-center grid content-center w-11/12">
+                <h2 class="font-sans text-bold text-4xl md:text-7xl">Frontend developer</h2>
+                <p class="font-serif text-1xl md:text-2xl"> &hellip; working as a bicycle&nbsp;mechanic</p>
             </section>
             <!-- <h3 class="big-component">The latest repositories I've been working on</h3> -->
             <!-- <section class="small-component">
@@ -49,7 +55,10 @@ let title = 'AOLar.no - Frontend developer and bicycle mechanic';
             -->
             <!-- <ReactCounter client:visible /> -->
         </main>
-        <Footer />
-    </div> <!-- .page-wrap end -->    
+
+        <footer class="text-center font-sans">
+            <p>&copy; {thisYear} AOLar.no</p>
+        </footer>
+    </div>    
 </body>
 </html>
