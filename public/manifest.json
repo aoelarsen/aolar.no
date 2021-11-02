@@ -1,7 +1,8 @@
 {
   
-  "short_name": "AOLar.no",
-  "name": "AOLar.no - Anders Øksendal Larsen - front-end developer and bicycle mechanic",
+  "short_name": "aolar.no",
+  "name": "AOLar.no - Anders Øksendal Larsen",
+  "description": "A front-end developer and a bicycle mechanic but first and foremost a problem solver",
   "icons": [
     { "src": "assets/icons/web/favicon.ico", "type": "image/x-icon", "sizes": "16x16 32x32" },
     { "src": "/icon-192.png", "type": "image/png", "sizes": "192x192" },
@@ -12,6 +13,6 @@
   "start_url": "/index.html",
   "background_color": "#F9F7F5",
   "display": "standalone",
-  "scope": "/app/",
+  "scope": "/",
   "theme_color": "#1D212E"
 }
